@@ -13,33 +13,66 @@
     margin: 0;
 }
 body{
-    font-family: 'outfit', sans-serif;
     width: 100vw;
-    height: 100vh;
+    font-family: 'outfit', sans-serif;
     background-color: var(--veryDarkBlueMain);
     color: var(--softBlue);
 }
 .card-container{
     background-color: var(--veryDarkBlueCard);
     border-radius: 20px;;
-    width: 20rem;
-    height: 33rem;
+    width: 350px;
+    height: 600px;
     margin: 8rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     flex-direction: column;
+    box-shadow: 20px 20px 5px 10px  hsla(215, 50%, 5%, 0.847),
+                -30px 0px 5px 0px  hsla(215, 50%, 5%, 0.847),
+                -50px -20px 10px 20px  hsla(235, 52%, 5%, 0.307),
+                50px -30px 10px 20px  hsla(235, 52%, 5%, 0.307);
 }
-.img-card img{
+.img-card{
+    position: relative;
+    width: 19rem;
+    height: 19rem;
+    background-color: hsl(178, 100%, 50%);
+    border-radius: 22px;
+}
+.equilibrium{
+    position: relative;
+    opacity: 1;
     border-radius: 20px;
-    width: 15rem;
+    width: 19rem;
+    height: 19rem;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.overlay svg{
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    
+}
+.img-card:hover .overlay svg{
+    visibility: visible;
+}
+.img-card:hover .equilibrium{
+    opacity: .5;
 }
 .caption{
-    height: 10rem;
     display: grid;
-    width: 240px;
-    grid-template-rows: 20px 20px 20px;
+    width: 19rem;
     grid-template-areas:
         "title title"
         "title title"
@@ -48,18 +81,17 @@ body{
         "eht time" ;
 }
 .caption h3{
-    border: 1px solid wheat;
+    padding: 25px 0 20px 0;
     color: var(--white);
     grid-area: title;
 }
 .caption>p{
-    border: 1px solid cadetblue;
     color: var(--softBlue);
     grid-area: capt;
+    padding-bottom: 20px;
 }
 .eth{
     display: flex;
-    border: 1px solid red;
     color: var(--cyan);
     grid-area: eht;
 }
@@ -70,20 +102,31 @@ body{
     color: var(--softBlue);
     display: flex;
     justify-content: flex-end;
-    border: 1px solid green;
     grid-area: time;
 }
 .author{
+    margin-top: 10px;
+    padding-top: 15px;
     display: flex;
-    width: 240px;
+    width: 19rem;
     border-top: 1px solid hsla(215, 52%, 70%, 0.145);
 }
 .author img{
     margin: 5px;
-    width: 30px;
+    width: 35px;
     border: 1px solid white;
     border-radius: 50%;
 }
 .author p{
+    margin-left: 8px;
     align-self: center;
+}
+.name{
+    color: var(--white)
+}
+.name:hover{
+    color: var(--cyan);
+}
+h3:hover{
+    color: var(--cyan);
 }
